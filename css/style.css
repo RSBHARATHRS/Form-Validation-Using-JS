@@ -34,7 +34,7 @@ body{
 }
 
 .formContainer::after{
-    filter: blur(10px);
+    filter: blur(8px);
 }
 
 @keyframes animate{
