@@ -17,17 +17,17 @@
                 <h1>Create a new account</h1>
                 <p>It's quick and easy.</p>
             </div>
-            <form action="">
+            <form onsubmit="checkValidate()">
                 <div class="nameCon">
                     <input type="text" placeholder="First Name" name="fname" id="fname" autocomplete="off">
                     <input type="text" placeholder="Surename" name="lname" id="lname">
                 </div>
-                <input type="text" placeholder="Mobile number  email address"><br>
-                <input type="text" placeholder="email address"><br>
+                <input type="text" placeholder="Mobile number"><br>
+                <input id="email" type="text" placeholder="email address"><br>
                 <input type="text" placeholder="New password" id="pass"><br>
                 <input type="text" placeholder="Confirm password" id="cpass"><br>
                 <span id="e1">Required</span>
-                <input type="button" value="Sign Up" onsubmit="storeInfo()">
+                <input type="button" value="Sign Up" onclick="checkValidate()">
                 <a href="">forget password?</a>
             </form>
         </div>

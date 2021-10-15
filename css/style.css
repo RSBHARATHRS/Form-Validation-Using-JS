@@ -1,9 +1,15 @@
 body{
     margin: 0;
     padding: 0;
+    background-image: url("../images/pg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .parent{
-    margin-top: 20px;
+    
 }
 
 .formContainer{
@@ -11,7 +17,7 @@ body{
     padding: 20px;
     width: 500px;
     text-align: center;
-    margin: 0 auto;
+   
     border-radius: 20px;
     background-color: #fff;
  

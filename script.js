@@ -1,51 +1,22 @@
-let fname=document.getElementById("fname");
-let lname=document.getElementById("lname");
-let e1=document.getElementById("e1");
-let pass=document.getElementById("pass");
+let fname = document.getElementById("fname");
+let lname = document.getElementById("lname");
 
+let email = document.getElementById("email");
+let e1 = document.getElementById("e1");
+let pass = document.getElementById("pass");
 
+emailReg = new RegExp(/^([a-z\d\.]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/);
 
-function isValid(temp){
-    if(temp.length <= 2){
-        return false;
-    }
-    return true;
-}
+function checkValidate(event){
+   
+    console.log("checkValidateFunction");
 
-fname.addEventListener('keyup',(e)=>{
-    if(fname.value.length <= 2){
-        fname.style.borderColor="red";
-    }else{
-        fname.style.borderColor="green";
-    }
-});
+    let emailValue = email.value;
+    console.log("Entered Email ID :" + emailValue + ", is valid :" + emailReg.test(emailValue));
 
-lname.addEventListener('keyup',(e)=>{
-    if(lname.value.length <= 2){
-        lname.style.borderColor="red";
-    }else{
-        lname.style.borderColor="green";
+    if(!emailReg.test(emailValue)){
+        email.focus();
+        email.style.borderColor = "red";
     }
-});
-pass.addEventListener("change",()=>{
-    if(pass.value.length <= 10){
-        alert("Password shoulb be 10 characters");
-    }
-
-});
-
-function storeInfo(){
-    if(pass.value==""){
-        e1.style.display="block";
-    }
-    let reg = /[a-zA-Z0-9]/
-    if(!reg.test(pass.value)){
-        alert("Password should be minimum 10 char");
-    }
-    let firstname = fname.value;
-    console.log(firstname);
-    if(!isValid(firstname)){
-        
-        return;
-    }
+   
 }
