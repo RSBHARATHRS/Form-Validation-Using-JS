@@ -1,0 +1,62 @@
+.parent{
+    margin-top: 20px;
+}
+
+.formContainer{
+    
+    padding: 20px;
+    width: 500px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 0px 0px 6px 2px grey;
+}
+
+#logo{
+    width: 90%;
+}
+
+label{
+    text-align: left;
+    display: inline-block;
+    width: 180px;
+    margin: 10px;
+}
+.nameCon{
+    width: 100%;
+    
+}
+
+.nameCon > input{
+    width: 44%;
+}
+
+form > input{
+    width: 92%;
+}
+input{
+    
+    outline: none;
+    margin: 10px;
+    padding: 16px;
+    border-radius: 10px;
+    border:1px solid grey;
+}
+
+input[type="button"]{
+    background-image: linear-gradient(to right,rgb(1, 155, 8),rgb(16, 212, 91));
+    border: none;
+}
+
+input[type="button"]:hover{
+    background-color: yellow;
+}
+
+a{
+    text-decoration: none;
+    color: grey;
+}
+#e1{
+   
+    display: none;
+}
