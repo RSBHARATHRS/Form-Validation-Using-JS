@@ -3,7 +3,7 @@ body{
     padding: 0;
     background-image: url("../images/pg.jpg");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100% 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,6 +57,10 @@ body{
 
 #logo{
     width: 90%;
+}
+
+#mobNum::before{
+    content: '+91';
 }
 
 label{
