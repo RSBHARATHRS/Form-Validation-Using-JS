@@ -20,7 +20,7 @@ body{
    
     border-radius: 20px;
     background-color: #fff;
- 
+    opacity: 1;
 }
 
 .formContainer::before,
@@ -88,6 +88,7 @@ input{
     padding: 16px;
     border-radius: 10px;
     border:1px solid grey;
+    box-shadow: 2px 2px 2px grey;
 }
 
 input[type="button"]{
@@ -102,6 +103,11 @@ input[type="button"]:hover{
 a{
     text-decoration: none;
     color: grey;
+}
+
+a:hover{
+    color: #000;
+    text-shadow: 1px 1px 1px grey;
 }
 #e1{
    
