@@ -1,9 +1,15 @@
 body{
     margin: 0;
     padding: 0;
+    background-image: url("../images/pg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .parent{
-    margin-top: 20px;
+    
 }
 
 .formContainer{
@@ -11,10 +17,10 @@ body{
     padding: 20px;
     width: 500px;
     text-align: center;
-    margin: 0 auto;
+   
     border-radius: 20px;
     background-color: #fff;
- 
+    opacity: 1;
 }
 
 .formContainer::before,
@@ -53,6 +59,10 @@ body{
     width: 90%;
 }
 
+#mobNum::before{
+    content: '+91';
+}
+
 label{
     text-align: left;
     display: inline-block;
@@ -78,6 +88,7 @@ input{
     padding: 16px;
     border-radius: 10px;
     border:1px solid grey;
+    box-shadow: 2px 2px 2px grey;
 }
 
 input[type="button"]{
@@ -92,6 +103,11 @@ input[type="button"]:hover{
 a{
     text-decoration: none;
     color: grey;
+}
+
+a:hover{
+    color: #000;
+    text-shadow: 1px 1px 1px grey;
 }
 #e1{
    

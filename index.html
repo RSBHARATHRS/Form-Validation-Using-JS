@@ -14,21 +14,15 @@
                 <img id="logo" src="images/Facebook-Logo.png">
             </div>
             <div class="formHeading">
-                <h1>Create a new account</h1>
-                <p>It's quick and easy.</p>
+                <h1>Welcome to Facebook</h1>
             </div>
-            <form action="">
-                <div class="nameCon">
-                    <input type="text" placeholder="First Name" name="fname" id="fname" autocomplete="off">
-                    <input type="text" placeholder="Surename" name="lname" id="lname">
-                </div>
-                <input type="text" placeholder="Mobile number  email address"><br>
-                <input type="text" placeholder="email address"><br>
-                <input type="text" placeholder="New password" id="pass"><br>
-                <input type="text" placeholder="Confirm password" id="cpass"><br>
-                <span id="e1">Required</span>
-                <input type="button" value="Sign Up" onsubmit="storeInfo()">
-                <a href="">forget password?</a>
+
+            <form onsubmit="checkValidate()">
+                <input id="email" type="text" placeholder="email address"><br>
+                <input type="text" placeholder="password" id="pass"><br>
+                <input type="submit" value="Sign In" onclick="checkValidate()">
+                <a href="forget_pass.html">forget password? </a>&nbsp;<a href="CreateAcc.html"> Don't have account?</a>
+
             </form>
         </div>
     </div>

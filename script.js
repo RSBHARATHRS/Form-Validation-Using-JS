@@ -1,51 +1,47 @@
-let fname=document.getElementById("fname");
-let lname=document.getElementById("lname");
-let e1=document.getElementById("e1");
-let pass=document.getElementById("pass");
+let fname = document.getElementById("fname");
+let lname = document.getElementById("lname");
+let mobNum = document.getElementById("mobNum");
+let email = document.getElementById("email");
+let e1 = document.getElementById("e1");
+let pass = document.getElementById("pass");
 
+emailReg = new RegExp(/^([a-z\d\.]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/);
+nameReg = new RegExp(/^([a-zA-Z]{3,20})$/);
+lnameReg = new RegExp(/^([a-zA-Z]{1,20})$/);
 
+function checkValidate(event){
+   event.preventDefault();
+    console.log("checkValidateFunction");
 
-function isValid(temp){
-    if(temp.length <= 2){
-        return false;
-    }
-    return true;
-}
+    let emailValue = email.value;
+    let fnameValue = fname.value;
+    let lnameValue = lname.value;
+    let mobValue = mobNum.value;
+    console.log("Entered Email ID :" + emailValue + ", is valid :" + emailReg.test(emailValue));
 
-fname.addEventListener('keyup',(e)=>{
-    if(fname.value.length <= 2){
-        fname.style.borderColor="red";
+    //First name checking
+    if(!nameReg.test(fnameValue)){
+        email.focus();
+        fname.style.borderColor = "red";
     }else{
-        fname.style.borderColor="green";
+        fname.style.borderColor = "green";
     }
-});
 
-lname.addEventListener('keyup',(e)=>{
-    if(lname.value.length <= 2){
-        lname.style.borderColor="red";
+    //last name checking
+    if(!lnameReg.test(lnameValue)){
+        email.focus();
+        lname.style.borderColor = "red";
     }else{
-        lname.style.borderColor="green";
-    }
-});
-pass.addEventListener("change",()=>{
-    if(pass.value.length <= 10){
-        alert("Password shoulb be 10 characters");
+        lname.style.borderColor = "green";
     }
 
-});
+    //Email checking
+    if(!emailReg.test(emailValue)){
+        email.focus();
+        email.style.borderColor = "red";
+    }else{
+        email.style.borderColor = "green";
+    }
 
-function storeInfo(){
-    if(pass.value==""){
-        e1.style.display="block";
-    }
-    let reg = /[a-zA-Z0-9]/
-    if(!reg.test(pass.value)){
-        alert("Password should be minimum 10 char");
-    }
-    let firstname = fname.value;
-    console.log(firstname);
-    if(!isValid(firstname)){
-        
-        return;
-    }
+    console.log(mobValue);
 }
