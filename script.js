@@ -10,7 +10,7 @@ nameReg = new RegExp(/^([a-zA-Z]{3,20})$/);
 lnameReg = new RegExp(/^([a-zA-Z]{1,20})$/);
 
 function checkValidate(event){
-   
+   event.preventDefault();
     console.log("checkValidateFunction");
 
     let emailValue = email.value;
