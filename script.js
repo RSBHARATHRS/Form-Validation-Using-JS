@@ -1,3 +1,22 @@
+
+
+//*************Login Page*****************/
+let InUserName = document.getElementById("Iemail");
+let InPass = document.getElementById("Ipass");
+
+function login(){
+    let uname = window.localStorage.getItem("userName");
+    let upass = window.localStorage.getItem("password");
+    if(InUserName.value == uname && InPass.value == upass){
+        alert("Successfully loged in");
+        window.location.replace("./home.html");
+    }else{
+        alert("Enter a valid User Name and password");
+    }
+}
+
+
+/********Create New Account Page*********/
 let fname = document.getElementById("fname");
 let lname = document.getElementById("lname");
 let mobNum = document.getElementById("mobNum");
@@ -12,7 +31,7 @@ lnameReg = new RegExp(/^([a-zA-Z]{1,20})$/);
 passsReg = new RegExp(/^([\da-zA-Z@\.#]{8,12})$/);
 
 function checkValidate(event){
-    window.location.replace("http://www.w3schools.com");
+    
     allOk = true;
     console.log("checkValidateFunction");
 
@@ -89,9 +108,10 @@ function checkValidate(event){
     }
 
     if(allOk){
-        alert("Submitted");
+        
         window.localStorage.setItem("userName",emailValue);
-        window.localStorage.setItem("passeord",passValue);
-    }
-    
+        window.localStorage.setItem("password",passValue);
+        alert("Submitted");
+        window.location.replace("./index.html");
+    }   
 }
