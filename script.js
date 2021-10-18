@@ -9,6 +9,7 @@ let cpass = document.getElementById("cpass");
 emailReg = new RegExp(/^([a-z\d\.]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/);
 nameReg = new RegExp(/^([a-zA-Z]{3,20})$/);
 lnameReg = new RegExp(/^([a-zA-Z]{1,20})$/);
+passsReg = new RegExp(/^([\da-zA-Z@\.#]{8,12})$/);
 
 function checkValidate(event){
  
@@ -70,12 +71,14 @@ function checkValidate(event){
         return;
     }
     console.log("New Pass: "+passValue+"Confirm Pass : "+cpassValue);
-    if(!passValue == cpassValue){
+    if(passValue != cpassValue){
         alert("New Password and confirm password must be same");
-        return;
+        pass.style.borderColor = "red";
+        cpass.style.borderColor = "red";
     }
     else{
         pass.style.borderColor = "green";
+        cpass.style.borderColor = "green";
     }
-    console.log(mobValue);
+    alert("Submitted");
 }

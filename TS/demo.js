@@ -1,10 +1,12 @@
-var demo = /** @class */ (function () {
-    function demo() {
-        console.log("Hi msg from constructor");
+var Emp = /** @class */ (function () {
+    function Emp(name, age) {
+        this.name = name;
+        this.age = age;
     }
-    demo.prototype.meth = function () {
-        console.log("Hi msg from method");
+    Emp.prototype.display = function () {
+        console.log("Name : " + this.name + " Age : " + this.age);
     };
-    return demo;
+    return Emp;
 }());
-var d = new demo();
+var a = new Emp("Raju", 25);
+a.display();

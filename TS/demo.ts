@@ -1,10 +1,16 @@
-class demo{
-    constructor(){
-        console.log("Hi msg from constructor");
-    }
-    meth(){
-        console.log("Hi msg from method");
+
+class Emp{    
+    name;    
+    age;    
+    constructor(name:string,age:number){             
+        this.name =name;       
+        this.age=age;    
+    }   
+    display(){        
+        console.log("Name : "+this.name + " Age : "+this.age)    
     }
 }
 
-var d = new demo();
+var a=new Emp("Raju",25);
+a.display();
+
