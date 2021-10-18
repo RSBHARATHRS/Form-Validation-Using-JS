@@ -2,7 +2,21 @@ bod{
     margin: 0;
     padding: 0;
 }
-
+header{
+    border:1px solid grey;
+    display: block;
+    height: 120px;
+}
+.logoCnt{
+    float: left;
+}
+.logoCnt > img{
+    width: 280px;
+    height: 100%;
+}
+nav{
+    float: right;
+}
 li{
     display: inline-block;
     border: 1px solid grey;

@@ -115,3 +115,13 @@ function checkValidate(event){
         window.location.replace("./index.html");
     }   
 }
+
+/************Forget Password Page********/
+
+function back(){
+    window.location.replace("./index.html");
+}
+
+function updatePassword(){
+
+}
