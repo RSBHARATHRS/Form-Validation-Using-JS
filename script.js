@@ -12,7 +12,8 @@ lnameReg = new RegExp(/^([a-zA-Z]{1,20})$/);
 passsReg = new RegExp(/^([\da-zA-Z@\.#]{8,12})$/);
 
 function checkValidate(event){
- 
+    window.location.replace("http://www.w3schools.com");
+    allOk = true;
     console.log("checkValidateFunction");
 
     let emailValue = email.value;
@@ -27,6 +28,7 @@ function checkValidate(event){
     if(!nameReg.test(fnameValue)){
         fname.focus();
         fname.style.borderColor = "red";
+        allOk = false;
         return;
     }else{
         fname.style.borderColor = "green";
@@ -36,6 +38,7 @@ function checkValidate(event){
     if(!lnameReg.test(lnameValue)){
         lname.focus();
         lname.style.borderColor = "red";
+        allOk = false;
         return;
     }else{
         lname.style.borderColor = "green";
@@ -45,6 +48,7 @@ function checkValidate(event){
     if(mobValue == '' || mobValue.length != 10){
         mobNum.style.borderColor = "red";
         mobNum.focus();
+        allOk = false;
         return;
     }else{
         mobNum.style.borderColor = "green";
@@ -54,6 +58,7 @@ function checkValidate(event){
     if(!emailReg.test(emailValue) || emailValue == ''){
         email.focus();
         email.style.borderColor = "red";
+        allOk = false;
         return;
     }else{
         email.style.borderColor = "green";
@@ -63,6 +68,7 @@ function checkValidate(event){
     if(passValue == '' || passValue == null){
         pass.style.borderColor = "red";
         pass.focus();
+        allOk = false;
         return;
     }
     if(cpassValue == '' || cpassValue == null){
@@ -75,10 +81,17 @@ function checkValidate(event){
         alert("New Password and confirm password must be same");
         pass.style.borderColor = "red";
         cpass.style.borderColor = "red";
+        allOk = false;
     }
     else{
         pass.style.borderColor = "green";
         cpass.style.borderColor = "green";
     }
-    alert("Submitted");
+
+    if(allOk){
+        alert("Submitted");
+        window.localStorage.setItem("userName",emailValue);
+        window.localStorage.setItem("passeord",passValue);
+    }
+    
 }
