@@ -64,7 +64,8 @@ function checkValidate(event){
     }
 
     //Mobile Number
-    if(mobValue == '' || mobValue.length != 10){
+    if(mobValue == '' || mobValue.length != 10)
+    {
         mobNum.style.borderColor = "red";
         mobNum.focus();
         allOk = false;
@@ -74,7 +75,8 @@ function checkValidate(event){
     }
 
     //Email checking
-    if(!emailReg.test(emailValue) || emailValue == ''){
+    if(!emailReg.test(emailValue) || emailValue == '')
+    {
         email.focus();
         email.style.borderColor = "red";
         allOk = false;
@@ -108,7 +110,7 @@ function checkValidate(event){
     }
 
     if(allOk){
-        
+        window.localStorage.setItem("MobNum",mobValue);
         window.localStorage.setItem("userName",emailValue);
         window.localStorage.setItem("password",passValue);
         alert("Submitted");
@@ -117,11 +119,25 @@ function checkValidate(event){
 }
 
 /************Forget Password Page********/
+let fphoneNum=document.getElementById("fphoneNum");
+let fnpass=document.getElementById("fnpass");
+let fcpass=document.getElementById("fcpass");
 
 function back(){
     window.location.replace("./index.html");
 }
 
 function updatePassword(){
-
+    if(window.localStorage.getItem("MobNum") == fphoneNum.value){
+        if(fnpass.value == fcpass.value){
+            window.localStorage.setItem("password",fnpass.value);
+            alert("Password Updated Successfully");
+            window.location.replace("./index.html");
+        }else{
+            alert("New Password and Confirm password must be same");
+            return;
+        }
+    }else{
+        alert("Enter a Correct Phone number");
+    }
 }
